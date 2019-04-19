@@ -1,0 +1,42 @@
+{"Flights": [
+    { 
+        "from" : "Pune",
+        "to": "Delhi",
+        "departureTime" : "10:00 AM",
+        "arrivalTime" : "12:00 PM",
+        "price": "9,000.00",
+        "number": "AI-202"
+    },
+    {
+        "from" : "Pune",
+        "to": "Delhi",
+        "departureTime" : "10:00 AM",
+        "arrivalTime" : "12:00 PM",
+        "price": "9,000.00",
+        "number": "AI-202"
+    },
+    {
+        "from" : "Pune",
+        "to": "Delhi",
+        "departureTime" : "10:00 AM",
+        "arrivalTime" : "12:00 PM",
+        "price": "9,000.00",
+        "number": "AI-202"
+    },
+    {
+        "from" : "Pune",
+        "to": "Delhi",
+        "departureTime" : "10:00 AM",
+        "arrivalTime" : "12:00 PM",
+        "price": "9,000.00",
+        "number": "AI-202"
+    },
+    {
+        "from" : "Pune",
+        "to": "Delhi",
+        "departureTime" : "10:00 AM",
+        "arrivalTime" : "12:00 PM",
+        "price": "9,000.00",
+        "number": "AI-202"
+    }
+]}

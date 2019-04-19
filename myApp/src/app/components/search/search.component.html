@@ -1,0 +1,51 @@
+<div>
+  <div class="searchByInputs">
+    <div class="tab-slider--nav">
+      <ul class="tab-slider--tabs">
+        <li class="tab-slider--trigger" [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1'">One way</li>
+        <li class="tab-slider--trigger" [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">Return</li>
+      </ul>
+    </div>
+    <div [ngSwitch]="viewMode">
+      <br>
+      <div  class="tab-containers"  >
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <input type="text" placeholder="Enter Origin City" formControlName="originCity" id="originCity" />
+              <div *ngIf="submitted && originCity.errors" >
+                  <div *ngIf="originCity.errors.required" class = "error">Origin city is required</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Enter Destination City" formControlName="destinationCity"/>
+              <div *ngIf="submitted && destinationCity.errors" >
+                  <div *ngIf="destinationCity.errors.required" class = "error">Destination city is required</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="date"  placeholder="Departure date"  formControlName="departureDate"  min="2019-04-01"/>
+              <div *ngIf="submitted && departureDate.errors" >
+                  <div *ngIf="departureDate.errors.required" class = "error">Departure date is required</div>
+              </div>
+          </div>
+          <div id="tab2" class="form-group" *ngSwitchCase="'tab2'">
+              <input type="date"  placeholder="Return date"  formControlName="returnDate"  min="2019-04-01"/>
+              <div *ngIf="submitted && returnDate.errors" >
+                  <div *ngIf="returnDate.errors.required" class = "error">Return date is required</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="number" placeholder="number of passengers" formControlName = "numberOfPassengers" min = 1/>
+              <div *ngIf="submitted && (numberOfPassengers.errors || numberOfPassengers.value === 0)">
+                <div *ngIf="numberOfPassengers.errors.required || numberOfPassengers.value === 0" class = "error">Please enter number of passengers</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <button (click)="onSubmit()"  color="primary" [disabled] = "!searchForm.valid || numberOfPassengers.value === 0">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
